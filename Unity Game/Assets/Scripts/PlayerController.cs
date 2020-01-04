@@ -21,9 +21,12 @@ public class PlayerController : MonoBehaviour
     public static int moves;
     public int internalMoves = 5;
     int originalMoves = 5;
+
+    // puts the player at spawn point and sets amount of moves at 5
     void Start()
     {
         moves = internalMoves;
+        player.position = respawnPoint;
     }
 
     // Update is called once per frame
@@ -69,7 +72,7 @@ public class PlayerController : MonoBehaviour
 
     // The coordinates that respawns player back to beginning of level
 
-    Vector3 respawnPoint = new Vector3(0f, 0f, 0f);
+    Vector3 respawnPoint = new Vector3(-8f, -4f, 0f);
     void maxHeightWidth()
     {
 
@@ -110,7 +113,6 @@ public class PlayerController : MonoBehaviour
     {
         originalMoves += 2;
         player.position = respawnPoint;
-
 
         internalMoves = originalMoves;
 
