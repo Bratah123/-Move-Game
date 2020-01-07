@@ -239,7 +239,7 @@ MonoBehaviour:
   squareMovementHorizontal2: -2
   squareMovementVertical: 2
   squareMovementVertical2: -2
-  internalMoves: 5
+  internalMoves: 1
 --- !u!61 &853348081
 BoxCollider2D:
   m_ObjectHideFlags: 0

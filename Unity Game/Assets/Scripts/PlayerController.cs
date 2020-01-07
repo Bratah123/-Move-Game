@@ -19,10 +19,12 @@ public class PlayerController : MonoBehaviour
     // maximum moves the player is allowed
 
     public static int moves;
-    public int internalMoves = 5;
-    int originalMoves = 5;
+    public int internalMoves = 1;
+    int originalMoves = 1;
 
     // puts the player at spawn point and sets amount of moves at 5
+
+    bool hasMoves;
     void Start()
     {
         moves = internalMoves;
@@ -42,25 +44,25 @@ public class PlayerController : MonoBehaviour
         // WASD controls, up, down, left, and right
 
         // right
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.D) && hasMoves == true)
         {
             player.Translate(playerHorizontal);
             internalMoves--;
         }
         // left
-        else if(Input.GetKeyDown(KeyCode.A))
+        else if(Input.GetKeyDown(KeyCode.A) && hasMoves == true)
         {
             player.Translate(playerHorizontal2);
             internalMoves--;
         }
         // up
-        else if (Input.GetKeyDown(KeyCode.W))
+        else if (Input.GetKeyDown(KeyCode.W) && hasMoves == true)
         {
             player.Translate(playerVertical);
             internalMoves--;
         }
         // down
-        else if (Input.GetKeyDown(KeyCode.S))
+        else if (Input.GetKeyDown(KeyCode.S) && hasMoves == true)
         {
             player.Translate(playerVertical2);
             internalMoves--;
@@ -104,13 +106,18 @@ public class PlayerController : MonoBehaviour
     {
         if(moves <= 0)
         {
-            Respawn();
+            hasMoves = false;
+        }
+        else
+        {
+            hasMoves = true;
         }
     }
 
     // resets the position of the player back to the middle and give them 2 more moves (Dying is rewarded)
-    void Respawn()
+    void Respawn(float i, float j, float k)
     {
+        Vector3 respawnPos = new Vector3(i, j, k);
         originalMoves += 2;
         player.position = respawnPoint;
 
