@@ -38,7 +38,6 @@ public class MainMenuButtons : MonoBehaviour
 
         player.position = respawnPos;
         
-
         PlayerController.moves = originalMoves;
 
     }

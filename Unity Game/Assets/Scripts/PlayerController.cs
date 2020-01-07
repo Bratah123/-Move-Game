@@ -121,8 +121,5 @@ public class PlayerController : MonoBehaviour
         PlayerController.moves = 1;
 
     }
-    public static void Die()
-    {
 
-    }
 }
