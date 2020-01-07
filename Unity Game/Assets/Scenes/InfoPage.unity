@@ -237,10 +237,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: This Game was made by Brandon, A puzzle based game where you get more moves
-    each time you die. This was my first ever game I made by myself, so it may be
-    buggy, in all I found making this game to increase my skill level as a dev and
-    hope you guys enjoy this game too!
+  m_Text: This is random text I am writing so I can have placeholder. If I ever finish
+    this game then I will write real stuff in here lol. This game was made by Brandon
+    hoped you enjoy.
 --- !u!222 &773956428
 CanvasRenderer:
   m_ObjectHideFlags: 0
