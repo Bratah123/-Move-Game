@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class MainMenuButtons : MonoBehaviour
 {
     // Loads the scene for all of the Levels
+    public Transform player;
     public void StartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
@@ -27,6 +28,19 @@ public class MainMenuButtons : MonoBehaviour
     public void Back()
     {
         SceneManager.LoadScene("MainMenu");
+    }
+    public void Restart()
+    {
+
+        int originalMoves = 1;
+
+        Vector3 respawnPos = new Vector3(-8f, -4f, 0f);
+
+        player.position = respawnPos;
+        
+
+        PlayerController.moves = originalMoves;
+
     }
 
 }

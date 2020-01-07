@@ -19,22 +19,19 @@ public class PlayerController : MonoBehaviour
     // maximum moves the player is allowed
 
     public static int moves;
-    public int internalMoves = 1;
     int originalMoves = 1;
 
-    // puts the player at spawn point and sets amount of moves at 5
-
+    // checks if the player has any moves left, if it is false they cannot make a move
     bool hasMoves;
     void Start()
     {
-        moves = internalMoves;
+        moves = 1;
         player.position = respawnPoint;
     }
 
     // Update is called once per frame
     void Update()
     {
-        moves = internalMoves;
 
         Vector3 playerHorizontal = new Vector3(squareMovementHorizontal, 0f, 0f);
         Vector3 playerHorizontal2 = new Vector3(squareMovementHorizontal2, 0f, 0f);
@@ -47,25 +44,25 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.D) && hasMoves == true)
         {
             player.Translate(playerHorizontal);
-            internalMoves--;
+            PlayerController.moves--;
         }
         // left
         else if(Input.GetKeyDown(KeyCode.A) && hasMoves == true)
         {
             player.Translate(playerHorizontal2);
-            internalMoves--;
+            PlayerController.moves--;
         }
         // up
         else if (Input.GetKeyDown(KeyCode.W) && hasMoves == true)
         {
             player.Translate(playerVertical);
-            internalMoves--;
+            PlayerController.moves--;
         }
         // down
         else if (Input.GetKeyDown(KeyCode.S) && hasMoves == true)
         {
             player.Translate(playerVertical2);
-            internalMoves--;
+            PlayerController.moves--;
         }
 
         maxHeightWidth();
@@ -82,22 +79,22 @@ public class PlayerController : MonoBehaviour
         if(transform.position.x > 8)
         {
             player.Translate(-2f, 0f, 0f);
-            internalMoves++;
+            PlayerController.moves++;
         }
         else if(transform.position.x < -8)
         {
             player.Translate(2f, 0f, 0f);
-            internalMoves++;
+            PlayerController.moves++;
         }
         else if (transform.position.y > 2)
         {
             player.Translate(0f, -2f, 0f);
-            internalMoves++;
+            PlayerController.moves++;
         }
         else if (transform.position.y < -4)
         {
             player.Translate(0f, 2f, 0f);
-            internalMoves++;
+            PlayerController.moves++;
         }
     }
 
@@ -115,13 +112,17 @@ public class PlayerController : MonoBehaviour
     }
 
     // resets the position of the player back to the middle and give them 2 more moves (Dying is rewarded)
-    void Respawn(float i, float j, float k)
+    public void Restart(float i, float j, float k)
     {
         Vector3 respawnPos = new Vector3(i, j, k);
-        originalMoves += 2;
-        player.position = respawnPoint;
 
-        internalMoves = originalMoves;
+        player.position = respawnPos;
+
+        PlayerController.moves = 1;
+
+    }
+    public static void Die()
+    {
 
     }
 }
