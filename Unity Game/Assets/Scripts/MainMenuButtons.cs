@@ -43,7 +43,7 @@ public class MainMenuButtons : MonoBehaviour
     }
     public void ResetMap()
     {
-        SceneManager.LoadScene("Levels");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
 }
