@@ -41,5 +41,9 @@ public class MainMenuButtons : MonoBehaviour
         PlayerController.moves = originalMoves;
 
     }
+    public void ResetMap()
+    {
+        SceneManager.LoadScene("Levels");
+    }
 
 }
