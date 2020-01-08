@@ -462,9 +462,12 @@ MonoBehaviour:
   squareMovementVertical: 2
   squareMovementVertical2: -2
   facingLeft: {fileID: 0}
-  facingRight: {fileID: 0}
-  facingUp: {fileID: 0}
-  facingDown: {fileID: 0}
+  facingRight: {fileID: 8864962371871035273, guid: 33a2d8d66d92a3e4dbccf5c41cea07c0,
+    type: 3}
+  facingUp: {fileID: 8695663932666705565, guid: 33a2d8d66d92a3e4dbccf5c41cea07c0,
+    type: 3}
+  facingDown: {fileID: 6582317443765400557, guid: 33a2d8d66d92a3e4dbccf5c41cea07c0,
+    type: 3}
 --- !u!61 &853348081
 BoxCollider2D:
   m_ObjectHideFlags: 0
