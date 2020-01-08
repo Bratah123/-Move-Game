@@ -19,6 +19,10 @@ public class PlayerDeath : MonoBehaviour
         {
             NextLevel();
         }
+        else if(collision.tag == "Wall")
+        {
+            Debug.Log("Wall!");
+        }
     }
 
     public void Death()

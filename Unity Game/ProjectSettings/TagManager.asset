@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Lava
   - FinishLine
+  - Wall
   layers:
   - Default
   - TransparentFX

@@ -23,6 +23,8 @@ public class PlayerController : MonoBehaviour
 
     // checks if the player has any moves left, if it is false they cannot make a move
     bool hasMoves;
+    // Variables that hold sprites for the player directions
+    public Sprite facingLeft, facingRight, facingUp, facingDown;
     void Start()
     {
         moves = 1;
