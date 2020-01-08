@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class Lava : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject lavaPrefab;
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if(collision.tag == "Player")
+        {
+            lavaPrefab.SetActive(false);
+        }
     }
 }
